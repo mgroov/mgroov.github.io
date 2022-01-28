@@ -1,6 +1,6 @@
 # GameDevelopmentNMSU
 
-###### Loading in and running a downloaded game from pico-8 /n
+###### Loading in and running a downloaded game from pico-8 
 ![archeos p8_0](https://user-images.githubusercontent.com/44854053/151632724-5ace2498-a97b-4f57-8b07-df8006bfa83f.gif)
 
 
