@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Matthew Groover</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>  
+
+        <!-- <div class="headerbar">
+            Computer Scientist
+        </div> -->
+
+        <div class="linkbar">
+            <div class="nav-wrapper">
+                <div class="left-side">
+
+                    <div class="brand">
+                        <div> MATTHEW GROOVER</div>
+                    </div>
+
+                </div>
+                <div class="right-side">
+
+                    <div class="nav-link-wrapper">
+                        <a href="index.html">Home</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">About</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="coursework.html">CourseWork</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="jobs.html">jobs</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="Extra.html">ExtraCarricular</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="https://github.com/mgroov">GitHub</a>
+                    </div>
+
+                        
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+
+                <div class="portfolio-items-wrapper">
+
+                    <div class="portfolio-item-wrapper">
+                            <div class = "portfolio-img-background" style="background-image:url(images/portfolio1.jpg)"></div>
+                        
+                        
+                        <div class="img-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/courselogo.jpg">
+                            </div>
+
+                            <div class="subtitle">
+                                Coursework done while in the NMSU computer science program covering a wide selesction of disciplines and skills 
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-wrapper">
+                            <div class = "portfolio-img-background" style="background-image:url(images/portfolio2.jpg)"></div>
+                        
+                        
+                        <div class="img-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/jobslogo.png">
+                            </div>
+
+                            <div class="subtitle">
+                                with skill and percision we move forward
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-wrapper">
+                        <div class = "portfolio-img-background" style="background-image:url(images/portfolio3.jpg)"></div>
+                    
+                    
+                    <div class="img-text-wrapper">
+                        <div class="logo-wrapper">
+                            <img src="images/logos/Extralogo.jpg">
+                        </div>
+
+                        <div class="subtitle">
+                            with skill and percision we move forward
+                        </div>
+
+                    </div>
+                </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        
+    </body>
+
+    <script>
+
+        const portfoliotItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+        portfoliotItems.forEach(portfolioitem=>{
+            portfolioitem.addEventListener('mouseover',()=>{
+                portfolioitem.childNodes[1].classList.add('img-darken');
+            })
+        })
+
+        portfoliotItems.forEach(portfolioitem=>{
+            portfolioitem.addEventListener('mouseout',()=>{
+                portfolioitem.childNodes[1].classList.remove('img-darken');
+            })
+        })
+
+
+    </script>
+
+</html>
