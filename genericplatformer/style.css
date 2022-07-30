@@ -14,11 +14,6 @@
     position: relative;
     top: 150px;
 }
-@keyframes block{
-    0%{left: 480px;}
-    100%{left: 0px;}
-
-}
 #block{
     width: 20px;
     height: 20px;
@@ -27,4 +22,8 @@
     top: 130px;
     left: 480px;
     animation: block is infinite;
+}
+@keyframes block {
+    0%{background-color: aqua;}
+    100%{background-color: red;}
 }
