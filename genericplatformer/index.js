@@ -1,8 +1,9 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d'); //gets relation for drawing
 
-canvas.width = 1024
-canvas.height  = 576
+canvas.width = 750
+canvas.height  = 950
+
 
 const gravity = 0.2 //the amount the player falls by
 
@@ -19,15 +20,16 @@ const player1 =  new player({
         y:0
     }
 })
-
+// width of line , thickness , color , location
+floor = new line(canvas.width, 1, "black", 0,canvas.height-10); 
 
 
 function gameloop(){
     window.requestAnimationFrame(gameloop)
     c.fillStyle = 'grey'
     c.fillRect(0,0,canvas.width,canvas.height)
-    player1.height =150
     player1.update()
+    floor.update()  
 
     player1.velocity.x=0
     if(keys.l.pressed && lastkey=='l'){
@@ -37,7 +39,7 @@ function gameloop(){
         player1.velocity.x =2
     }
     else if(!keys.j.pressed){
-        player1.height=150
+        player1.height=75
         keys.j.pressed=true
     }
    

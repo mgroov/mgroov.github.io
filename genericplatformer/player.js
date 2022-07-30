@@ -2,7 +2,7 @@ class player{
     constructor({position,velocity}){
         this.position =position
         this.velocity = velocity
-        this.height = 150
+        this.height = 75
         this.touchedground = true
     }
 
@@ -69,6 +69,7 @@ window.addEventListener('keydown', (event) => {
         case'ArrowDown':
             if(velocitystore <= 5){
                 velocitystore += 1
+                player1.height -= player1.height*0.05
             }
         break
         
@@ -88,7 +89,7 @@ window.addEventListener('keyup', (event) => {
         break
         case'ArrowDown':
         if(player1.touchedground == true){
-            player1.velocity.y = (-3*velocitystore)
+            player1.velocity.y = (-2*velocitystore)
             player1.touchedground =false
             velocitystore=0
             keys.j.pressed=false;
