@@ -21,10 +21,10 @@
     position: relative;
     top: 130px;
     left: 480px;
-    animation: Block is infinite linear;
+    animation: block is infinite linear;
 }
-@keyframes Block{
-    0%{left:480px;}
-    100%{left:-40px;}
+@keyframes block{
+    0% {left:480px;}
+    100% {left:-40px;}
 
 }
