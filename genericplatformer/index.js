@@ -13,7 +13,7 @@ c.fillRect(0,0,canvas.width,canvas.height)//highlight the canvas
 const player1 =  new player({
     position:{ //initialize player
         x:canvas.width/2,
-        y:canvas.height - 150
+        y:550
     },
     velocity:{
         x:0,
