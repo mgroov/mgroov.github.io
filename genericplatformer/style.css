@@ -14,6 +14,11 @@
     position: relative;
     top: 150px;
 }
+@keyframes block{
+    0%{left: 480px;}
+    100%{left: 0px;}
+
+}
 #block{
     width: 20px;
     height: 20px;
@@ -21,11 +26,5 @@
     position: relative;
     top: 130px;
     left: 480px;
-    animation: block;
-    animation-duration: infinite;
-}
-@keyframes block{
-    0%{left: 480px;}
-    100%{left: 0px;}
-
+    animation: block is infinite;
 }
