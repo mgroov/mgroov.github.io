@@ -24,7 +24,7 @@
     animation: block is infinite linear;
 }
 @keyframes block{
-    0% {left:480px;}
-    100% {left:-40px;}
+    0%{left: 480px;}
+    100%{left: -40px;}
 
 }
