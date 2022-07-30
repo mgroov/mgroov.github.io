@@ -21,7 +21,8 @@
     position: relative;
     top: 130px;
     left: 480px;
-    animation: block is infinite;
+    animation: block;
+    animation-duration: infinite;
 }
 @keyframes block{
     0%{left: 480px;}
