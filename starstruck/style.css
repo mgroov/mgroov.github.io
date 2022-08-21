@@ -23,7 +23,7 @@
     cursor: pointer;
   }
   button:disabled,button[disabled]{
-    background-color: #cccccc;
+    background-color: red;
     cursor:not-allowed !important;
   }
   .button:hover {
