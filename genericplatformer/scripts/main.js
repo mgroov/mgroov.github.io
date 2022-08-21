@@ -6,6 +6,8 @@ var player1;
 
 var gameLoop;
 
+var state = 'main';
+
 var up,left,right,charge;
 
 //runs once page has loaded

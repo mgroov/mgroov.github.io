@@ -1,24 +1,21 @@
-function b1click(Element ){
-
-    console.log("b1");
-    this.disabled = true;
+function b1click(){
+    
+    console.log('b1');
+    //b1.disabled = true;
 
 }
-
 function b2click(){
 
-    console.log("b2");
+    console.log('b2');
 
 }
-
 function b3click(){
 
-    console.log("b3");
+    console.log('b3');
 
 }
-
 function b4click(){
 
-    console.log("b4");
+    console.log('b4');
 
 }
