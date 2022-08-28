@@ -1,0 +1,32 @@
+*{
+   box-sizing: border-box; 
+}
+
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    /*this prevents arrow keys from moving 
+    screen too much */
+    overflow: hidden;
+}
+
+
+.game-container{
+    /* this maintains the screen similair to hardware
+    whereas the html will be how we do zooming and other 
+    actions */
+    position: relative;
+    width: 352px;
+    height: 198px;
+    margin: 0 auto;
+    outline: 1px solid white;
+
+    /* scales up image by 3 translate fixes
+    top cutting off problem*/
+    transform: scale(3) translateY(50%);
+}
+
+.game-container canvas{
+    image-rendering: pixelated;
+}
