@@ -11,22 +11,35 @@ class Overworld{
     //etc 
     startGameLoop(){
         const step =() =>{
+
+            //update all objects before drawing to avoid artifacts
+            Object.values(this.map.gameObject).forEach(Object =>{
+                Object.update({
+                    arrow:this.directionInput.direction,
+                    map: this.map
+                });
+            })
+
             
             this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
 
+            //establish camera person
+            const cameraperson = this.map.gameObject.hero;
+
+            
+
             //Draw lower layer
-            this.map.drawLowerImage(this.ctx);
+            this.map.drawLowerImage(this.ctx,cameraperson);
 
             //Draw Game Objects
-            Object.values(this.map.gameObject).forEach(Object =>{
-                Object.update({
-                    arrow:this.directionInput.direction
-                });
-                Object.sprite.draw(this.ctx);
+            Object.values(this.map.gameObject).sort((a,b) => {
+                return a.y - b.y;
+            }).forEach(Object =>{
+                Object.sprite.draw(this.ctx, cameraperson);
             })
 
             //Draw upper 
-            this.map.drawUpperImage(this.ctx);
+            this.map.drawUpperImage(this.ctx,cameraperson);
 
             //calls a step per animation frame
             requestAnimationFrame(() =>{
@@ -44,10 +57,19 @@ class Overworld{
         
         this.directionInput =  new DirectionInput();
         this.directionInput.init();
+        //console.log(this.map.walls)
+
+        this.map.mountObjects();
 
         this.startGameLoop();
 
-
+        this.map.startCutscene([
+            {who:"hero",type: "walk", direction: "down"},
+            {who:"hero",type: "walk", direction: "down"},
+            {who:"npc1",type: "walk", direction: "left"},
+            {who:"npc1",type: "walk", direction: "left"},
+            {who:"npc1",type: "stand", direction: "up",time: 800},
+        ])
         //placeholder draw loop
         // setTimeout(() =>{
         //     hero.sprite.draw(this.ctx);
