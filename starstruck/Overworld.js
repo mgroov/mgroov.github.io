@@ -43,7 +43,7 @@ class Overworld{
 
             //calls a step per animation frame
             //calls step once every 30 ms
-            window.setInterval(step(),30);
+            window.setInterval(step(),300);
             
         }//of game loop 
         step();
