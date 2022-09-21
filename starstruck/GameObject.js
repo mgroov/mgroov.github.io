@@ -14,6 +14,8 @@ class GameObject{
         });
         this.behaviorLoop = config.behaviorLoop || [];
         this.behaviorLoopIndex =0;
+
+        this.talking = config.talking || [];
     }
     
     mount(map){
@@ -33,7 +35,8 @@ class GameObject{
     async doBehaviorEvent(map){
 
         //if global cutscene running or non-existant behavior loop
-        if(map.isCutscenePlaying || this.behaviorLoop.length ===0){
+        if(map.isCutscenePlaying || this.behaviorLoop.length ===0 ||
+            this.isStanding){
             return;
         }
 

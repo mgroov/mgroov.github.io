@@ -3,6 +3,7 @@ class Person extends GameObject{
         //uses game object constructor to init values
         super(config);
         this.movingProgressRemaining = 0;
+        this.isStanding =false;
 
         this.isPlayerControlled = config.isPlayerControlled || false;
 
@@ -58,11 +59,17 @@ class Person extends GameObject{
             this.movingProgressRemaining =16;
             this.updateSprite(state);
         }
+
+        //of if behavior is stand
         if(behavior.type === "stand"){
+            //prevents queing multiple stand events causing 
+            //cascading timeout issues
+            this.isStanding = true;
             setTimeout(() =>{
                 utils.emitEvent("personStanding",{
                     whoId:this.id
                 })
+                this.isStanding = false;
             },behavior.time)
         }
     }

@@ -56,4 +56,19 @@ class OverworldEvent{
         document.addEventListener("personWalkingComplete", completeHandler)
 
     }
+
+    textMessage(resolve){
+
+        if(this.event.faceHero){
+            const obj=this.map.gameObject[this.event.faceHero];
+            obj.direction = utils.oppositeDirection(this.map.gameObject["hero"].direction);
+        }
+
+        const message = new TextMessage({
+          text: this.event.text,
+          onComplete:  () =>resolve() 
+        })
+
+        message.init(document.querySelector(".game-container"));
+    }
 }

@@ -59,6 +59,21 @@ class OverworldMap{
         }
 
         this.isCutscenePlaying = false;
+
+        //reset npcs to idle
+        Object.values(this.gameObject).forEach(object => object.doBehaviorEvent(this))
+    }
+
+    checkForActionCutscene(){
+        const hero = this.gameObject["hero"];
+        const nextCoords = utils.nextPosition(hero.x,hero.y,hero.direction);
+        const match = Object.values(this.gameObject).find(object =>{
+            return `${object.x},${object.y}`=== `${nextCoords.x},${nextCoords.y}`
+        });
+
+        if(!this.isCutscenePlaying && match && match.talking.length){
+            this.startCutscene(match.talking[0].events)
+        }
     }
 
     //methods to manage walls on game objects
@@ -94,6 +109,15 @@ window.OverworldMaps={
                     {type: "stand", direction:"up",time:500},
                     {type: "stand", direction:"down",time:2000},
                     {type: "stand", direction:"up",time:1200},
+                ],
+                talking:[
+                  {
+                  events:[
+                    {type:"textMessage",text:"dori me",faceHero:"npc1"},
+                    {type:"textMessage",text:"intervede anima"},
+                    {who:"hero",type: "walk", direction: "left"},
+                   ]
+                  } 
                 ]
             }),
             npc2: new Person({

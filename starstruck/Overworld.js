@@ -50,6 +50,13 @@ class Overworld{
         step();
     }//of start game loop 
 
+    bindActionInput(){
+        new KeyPressListener("Enter",()=>{
+            //Is there a person here that we can talk to
+            this.map.checkForActionCutscene();
+        })
+    }
+
     //initalises overworld 
     init(){
         //starts game loop
@@ -61,15 +68,20 @@ class Overworld{
 
         this.map.mountObjects();
 
+        this.bindActionInput();
+
         this.startGameLoop();
 
-        this.map.startCutscene([
-            {who:"hero",type: "walk", direction: "down"},
-            {who:"hero",type: "walk", direction: "down"},
-            {who:"npc1",type: "walk", direction: "left"},
-            {who:"npc1",type: "walk", direction: "left"},
-            {who:"npc1",type: "stand", direction: "up",time: 800},
-        ])
+        // this.map.startCutscene([
+            
+        //     {who:"hero",type: "walk", direction: "down"},
+        //     {who:"hero",type: "walk", direction: "down"},
+        //     {who:"npc1",type: "walk", direction: "up"},
+        //     {who:"npc1",type: "walk", direction: "left"},
+        //     {who:"hero",type: "stand", direction: "right",time:200},
+        //     {type:"textMessage",text:"dori me"},
+        //     //{who:"npc1",type: "stand", direction: "up",time: 800},
+        // ])
         //placeholder draw loop
         // setTimeout(() =>{
         //     hero.sprite.draw(this.ctx);
