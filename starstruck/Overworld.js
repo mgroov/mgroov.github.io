@@ -42,9 +42,8 @@ class Overworld{
             this.map.drawUpperImage(this.ctx,cameraperson);
 
             //calls a step per animation frame
-            requestAnimationFrame(() =>{
-                step();
-            })
+            //calls step once every 30 ms
+            window.setInterval(step(),30);
             
         }//of game loop 
         step();
