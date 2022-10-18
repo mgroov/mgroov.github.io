@@ -76,7 +76,7 @@ class Overworld{
     //initalises overworld 
     init(){
         //starts game loop
-        this.startMap(window.OverworldMaps.DemoRoom);
+        this.startMap(window.OverworldMaps.Kitchen);
         
         this.directionInput =  new DirectionInput();
         this.directionInput.init();
@@ -88,21 +88,12 @@ class Overworld{
 
         this.startGameLoop();
 
-        // this.map.startCutscene([
+         this.map.startCutscene([
             
-        //     {who:"hero",type: "walk", direction: "down"},
-        //     {who:"hero",type: "walk", direction: "down"},
-        //     {who:"npc1",type: "walk", direction: "up"},
-        //     {who:"npc1",type: "walk", direction: "left"},
-        //     {who:"hero",type: "stand", direction: "right",time:200},
-        //     {type:"textMessage",text:"dori me"},
-        //     //{who:"npc1",type: "stand", direction: "up",time: 800},
-        // ])
-        //placeholder draw loop
-        // setTimeout(() =>{
-        //     hero.sprite.draw(this.ctx);
-        //     npc1.sprite.draw(this.ctx);
-        // },200)
+            {type:"changeMap",map:"DemoRoom"}
+             //{type:"textMessage",text:"This is a long message to test if my code is working"},
+         
+         ]);
     
 
     }//of init
