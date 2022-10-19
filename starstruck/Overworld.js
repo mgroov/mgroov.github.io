@@ -76,7 +76,7 @@ class Overworld{
     //initalises overworld 
     init(){
         //starts game loop
-        this.startMap(window.OverworldMaps.Kitchen);
+        this.startMap(window.OverworldMaps.DemoRoom);
         
         this.directionInput =  new DirectionInput();
         this.directionInput.init();
@@ -88,12 +88,12 @@ class Overworld{
 
         this.startGameLoop();
 
-         this.map.startCutscene([
+        //  this.map.startCutscene([
             
-            {type:"changeMap",map:"DemoRoom"}
-             //{type:"textMessage",text:"This is a long message to test if my code is working"},
+        //     //{type:"changeMap",map:"DemoRoom"}
+        //      //{type:"textMessage",text:"This is a long message to test if my code is working"},
          
-         ]);
+        //  ]);
     
 
     }//of init
