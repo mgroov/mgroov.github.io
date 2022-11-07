@@ -185,7 +185,7 @@ window.OverworldMaps={
     },
     Kitchen:{
         lowerSrc: "images/maps/KitchenLower.png",
-        upperSrc: "images/maps/Kitchenupper.png",
+        upperSrc: "images/maps/KitchenUpper.png",
         gameObjects:{
             hero: new Person({
                 isPlayerControlled: true,
