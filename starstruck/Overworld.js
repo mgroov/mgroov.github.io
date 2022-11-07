@@ -5,12 +5,20 @@ class Overworld{
         this.canvas = this.element.querySelector(".game-canvas");
         this.ctx =  this.canvas.getContext("2d");
         this.map = null;
+        this.maxFPS = 60;
+        this.lastFrameTimeMs = 0;
     }//of constructor
 
     //starts the game loop to draw 
     //etc 
     startGameLoop(){
-        const step =() =>{
+        const step =(timestamp) =>{
+
+            if (timestamp < this.lastFrameTimeMs + (1000 / this.maxFPS)) {
+                requestAnimationFrame(step);
+                return;
+            }
+            this.lastFrameTimeMs = timestamp;
 
             //update all objects before drawing to avoid artifacts
             Object.values(this.map.gameObject).forEach(Object =>{
@@ -40,14 +48,11 @@ class Overworld{
 
             //Draw upper 
             this.map.drawUpperImage(this.ctx,cameraperson);
-
             //calls a step per animation frame
-            requestAnimationFrame(() =>{
-                step();
-            })
-            
+            requestAnimationFrame(step);
         }//of game loop 
-        step();
+        requestAnimationFrame(step);
+        console.log("hi");
     }//of start game loop 
 
     bindActionInput(){
