@@ -60,6 +60,10 @@ class Overworld{
             //Is there a person here that we can talk to
             this.map.checkForActionCutscene();
         })
+        new KeyPressListener("e",()=>{
+            //Is there a person here that we can talk to
+            this.map.checkForActionCutscene();
+        })
     }
 
     bindHeroPositionCheck(){
@@ -93,12 +97,12 @@ class Overworld{
 
         this.startGameLoop();
 
-        //  this.map.startCutscene([
-            
-        //     //{type:"changeMap",map:"DemoRoom"}
-        //      //{type:"textMessage",text:"This is a long message to test if my code is working"},
+        this.map.startCutscene([
+            {type:"battle"}
+            //{type:"changeMap",map:"DemoRoom"}
+             //{type:"textMessage",text:"This is a long message to test if my code is working"},
          
-        //  ]);
+        ]);
     
 
     }//of init
