@@ -129,8 +129,8 @@ window.OverworldMaps={
                 talking:[
                   {
                   events:[
-                    {type:"textMessage",text:"dori me",faceHero:"npc1"},
-                    {type:"textMessage",text:"intervede anima"},
+                    {type:"textMessage",text:"Dont enter that closet",faceHero:"npc1"},
+                    {type:"textMessage",text:"or leave through the front"},
                     {who:"hero",type: "walk", direction: "left"},
                    ]
                   } 
