@@ -176,7 +176,7 @@ window.OverworldMaps={
         [utils.asGridCord(5,10)]: [
             {
                 events:[
-                    {type:"changeMap",map: "Kitchen"}
+                    {type:"battle"}
                 ]
             }
         ],

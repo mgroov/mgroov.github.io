@@ -98,7 +98,7 @@ class Overworld{
         this.startGameLoop();
 
         this.map.startCutscene([
-            {type:"battle"}
+            //{type:"battle"}
             //{type:"changeMap",map:"DemoRoom"}
              //{type:"textMessage",text:"This is a long message to test if my code is working"},
          

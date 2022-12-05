@@ -69,7 +69,55 @@ class Combatant{
         this.xpFills.forEach(rect => rect.style.width = `${this.xpPercent}%`)
         this.hudElement.querySelector(".Combatant_level").innerText = this.level;
 
+        //uodate status
+        const statusElement =  this.hudElement.querySelector(".Combatant_status");
+        if(this.status){
+            statusElement.innerText = this.status.type;
+            statusElement.style.display = "block";
+        }
+        else{
+            statusElement.innerText = "";
+            statusElement.style.display = "none";
+        }
 
+
+    }
+
+    getReplacedEvents(origevents){
+
+        if(this.status?.type==="clumsy" && utils.randomFromArray([true,false,false])){
+            return[
+                {type:"textMessage",text:`${this.name} is feeling good`}
+            ]
+        }
+
+        return origevents;
+    }
+
+    getPostEvents(){
+        if(this.status?.type==="saucy"){
+            return[
+                {type:"textMessage",text:"in the zone"},
+                {type: "stateChange",recover:5,onCaster:true}
+            ]
+        }
+        return[];
+    }
+
+    decrementStatus(){
+        if(this.status?.expiresIn >0){
+            this.status.expiresIn -=1;
+            if(this.status.expiresIn === 0){
+                this.update({
+                    status:null
+                })
+                return{
+                    type: "textMessage",
+                    text: "Lost your cool!"
+                }
+            }
+        }
+        return  null;
     }
 
     init(container){
