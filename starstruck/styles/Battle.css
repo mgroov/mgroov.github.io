@@ -4,7 +4,7 @@
     right: 0;
     top:0;
     bottom: 0;
-    background-image: url(/images/maps/StreetBattleLower.png);
+    background-image: url(/images/maps/StreetBattle.png);
     background-size: cover;
     image-rendering: pixelated;
 }
@@ -67,10 +67,10 @@
     height: 32px;
 }
 @keyframes battle-glob-right {
-    0%{transform: translate3d(0,0,0) scale(0.5); opacity: 1}
-    50%{transform: translate3d(10px,-50px,0) scale(1); opacity: 1}
-    80%{transform: translate3d(149px,-27px,0) scale(1); opacity: 1}
-    100%{transform: translate3d(149px,-27px,0) scale(3); opacity: 0}
+    0%{transform: translate3d(-10px,0,0) scale(0.5); opacity: 1}
+    50%{transform: translate3d(50px,50px,0) scale(1); opacity: 1}
+    80%{transform: translate3d(149px,27px,0) scale(1); opacity: 1}
+    100%{transform: translate3d(149px,27px,0) scale(3); opacity: 0}
 }
 .battle-glob-right{
     left: 70px;

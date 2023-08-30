@@ -13,17 +13,17 @@ class Battle{
                 status:null,
                 isPlayerControlled:true,
              },this),
-             "enemy1" : new Combatant({
-                //pulls all values defined already
-                ...Pizzas.v001,
-                team: "enemy",
-                hp:50,
-                maxHp:50,
-                xp:20,
-                maxXp: 100,
-                level:1,
-                status:null,
-             },this),
+            //  "enemy1" : new Combatant({
+            //     //pulls all values defined already
+            //     ...Pizzas.v001,
+            //     team: "enemy",
+            //     hp:50,
+            //     maxHp:50,
+            //     xp:20,
+            //     maxXp: 100,
+            //     level:1,
+            //     status:null,
+            //  },this),
              "enemy2" : new Combatant({
                 //pulls all values defined already
                 ...Pizzas.f001,

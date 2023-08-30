@@ -10,7 +10,7 @@ window.Pizzas = {
     "s001":{
         name:"slice samurai",
         type: PizzaTypes.spicy,
-        src: "images/characters/people/npc1.png",
+        src: "pizza01.png",
         icon: "images/icons/spicy.png",
         isPlayerControlled:true,
         actions:["saucyStatus","clumsyStatus","damage1"],
@@ -25,7 +25,7 @@ window.Pizzas = {
     "f001":{
         name:"portabello",
         type: PizzaTypes.fungi,
-        src: "images/characters/people/npc3.png",
+        src: "pizza02.png",
         icon: "images/icons/fungi.png",
         actions:["damage1"],
     },
