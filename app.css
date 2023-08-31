@@ -140,7 +140,7 @@ nav {
 /* contact styles =========================================== */
 
 label{
-    color: #FFF8F0;
+    color: rgb(255,248,240);
     font-family: "Verdana", sans-serif;  
  }
 /* Style inputs with type="text", select elements and textareas */
@@ -159,7 +159,7 @@ input[type=text], select, textarea {
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
   background-color: teal;
-  color: white;
+  color: rgb(255,248,240);
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -176,7 +176,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: rgb(255,248,240);
   padding: 20px;
   font-family: "Verdana", sans-serif;
 } 
@@ -186,7 +186,7 @@ input[type=submit]:hover {
 .listingheader{
     margin-top: 10px;
     text-align: center;
-    color: #FFF8F0;
+    color: rgb(255,248,240);       
     font-family: "Verdana", sans-serif;
 }
 
@@ -200,7 +200,7 @@ input[type=submit]:hover {
     /* credit for rounded corners https://www.w3schools.com/css/css3_borders.asp*/
     border-radius: 15px 50px;
     border: 10px solid lightseagreen;
-    background-color: #FFF8F0;
+    background-color: rgb(255,248,240);
     padding: 20px;
     width: 75%;
     margin: 0 auto;
