@@ -208,4 +208,39 @@ input[type=submit]:hover {
     margin-top: 20px;   
 }
 
+.body-text {
+    display: flex;
+    margin: 25px;
+    font-family: "Verdana", sans-serif; 
+    align-items: center;
+    justify-content: center;
+}
+
+.pricingcard {
+    background-color:#F3EBD5
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* you can adjust based on your needs */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pricingcardh1{
+    font-family: "Verdana", sans-serif;
+    margin-bottom: 20px;
+}
+
+.pricingcardh2 {
+    font-family: "Verdana", sans-serif;
+    margin-bottom: 20px;
+}
+
+
+.pricingcardp {
+    font-family: "Verdana", sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Add more styling as needed */
+
 /*=================================================================================================*/

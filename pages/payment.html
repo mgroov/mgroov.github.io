@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <title>Payment</title>
     <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
+
 <body>
     <nav>
         <div class="heading">
@@ -31,55 +33,54 @@
         <div class="main-content">
             <p class="text">Pet Rock Camp</p>
         </div>
- 
+        <h1 class="price">Select a Service<span>/-</span></h1>
+            <!-- Dropdown Menu for Services -->
+            <select name="services" id="service-dropdown">
+                <option value="daily-rate">Daily Rate $999.99</option>
+                <option value="30-day-rate">30 Day Rate $899.99 Daily</option>
+                <option value="90-day-rate">90 Day Prepaid $799.99 Daily</option>
+                <option value="overnight-daily">Overnight Daily Rate $1699.99</option>
+                <option value="weekly-rate">Weekly Rate $1599.99 Daily</option>
+                <option value="monthly-rate">Monthly Rate $1499.99</option>
+            </select>
+
         <div class="centre-content">
             <h1 class="price">2499<span>/-</span></h1>
             <p class="course">
                 Buy DSA Self-Paced Course Now !
             </p>
         </div>
- 
+
         <div class="card-details">
             <p>Pay using Credit or Debit card</p>
             <br>
- 
+
             <div class="card-number">
                 <label> Card Number </label>
-                <input type="text"
-                       class="card-number-field"
-                       placeholder="###-###-###" />
+                <input type="text" class="card-number-field" placeholder="###-###-###" />
             </div>
             <div class="date-number">
                 <label> Expiry Date </label>
-                <input type="text"
-                       class="date-number-field"
-                       placeholder="DD-MM-YY" />
+                <input type="text" class="date-number-field" placeholder="DD-MM-YY" />
             </div>
- 
+
             <div class="cvv-number">
                 <label> CVV number </label>
-                <input type="text"
-                       class="cvv-number-field"
-                       placeholder="xxx" />
+                <input type="text" class="cvv-number-field" placeholder="xxx" />
             </div>
             <div class="nameholder-number">
                 <label> Card Holder name </label>
-                <input type="text"
-                       class="card-name-field"
-                       placeholder="Enter your Name" />
+                <input type="text" class="card-name-field" placeholder="Enter your Name" />
 
-            <div class="zip-number">
-                <label> ZIP Code</label>
-                <input type="text"
-                       class="zip-code-field"
-                       placeholder="Enter your ZIP Code" />
+                <div class="zip-number">
+                    <label> ZIP Code</label>
+                    <input type="text" class="zip-code-field" placeholder="Enter your ZIP Code" />
+                </div>
+                <button type="submit" class="submit-now-btn">
+                    submit
+                </button>
             </div>
-            <button type="submit"
-                    class="submit-now-btn">
-                submit
-            </button>
         </div>
-    </div>
 </body>
 
 </html>
