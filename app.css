@@ -140,17 +140,19 @@ nav {
     grid-template-columns: 1fr 1fr;
     margin: 0 15% 0 15%;
     border: 2px solid #64B6AC;
+    align-items: center;
+    background-color: #64B6AC;
 }
 .home-section-3-rows img {
-    width: 100%;
+    width: 35vw;
     height: auto;
     object-fit: cover;
-    vertical-align: center;
 }
 .home-section-3-rows-text {
     background-color: #64B6AC;
     color: rgb(56, 57, 51);
     font-family: Verdana;
+    height: 100%;
 }
 .home-section-3-rows-text h1 {
     margin: 10px;
@@ -212,7 +214,7 @@ nav {
 .blog-card {
     display: flex;
     margin: 10px;
-    width: 60%;
+    width: 80%;
     align-items: center;
     min-height: 200px;
     min-width: 500px;
@@ -227,8 +229,7 @@ nav {
     justify-content: left;
 }
 .blog-card-img img {
-    width: 300px;
-    height: 200px;
+    width: 30vw;
     object-fit: cover;
     object-position: left;
     margin: 10px;
@@ -241,12 +242,13 @@ nav {
     display: flex;
     color: white;
     margin: 10px;
-    font-size: 30px;
+    font-size: calc(0.5rem + 2vw);
 }
 .blog-card-subtitle {
     display: flex;
     margin: 10px;
     color: white;
+    font-size: calc(4px + 1.5vw);
 }
 
 /* for the individual blog pages */
@@ -254,31 +256,30 @@ nav {
     height: auto;
 }
 .blog-img img {
-    width: 600px;
-    height: 400px;
+    width: 40vw;
     object-fit: cover;
     margin: 5px;
 }
 .blog-title {
     display: flex;
     color: black;
-    font-size: 30px;
+    font-size: calc(0.5rem + 2vw);
     margin: 5px;
 }
 .blog-subtitle {
     display: flex;
     margin: 5px;
+    font-size: calc(0.2rem + 1.5vw);
 }
 .blog-body {
     background-color: #F3EBD5;
-    width: 60%;
-    min-width: 300px;
+    width: 80%;
     box-shadow: 2px 2px 5px 2px gray;
     margin: 5px;
 }
 .blog-body p {
     margin: 10px;
-    font-size: 20px;
+    font-size: calc(2px + 1.5vw);
 }
 
 /* contact styles =========================================== */
