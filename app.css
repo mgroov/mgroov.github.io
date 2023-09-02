@@ -125,6 +125,8 @@ nav {
 }
 .home-section-2-border {
     background-color: rgb(56, 57, 51);
+    border-top: 2px solid white;
+    border-bottom: 2px solid rgb(56, 57, 51);
 }
 /* for the rock camp features */
 .home-section-3 {
@@ -140,11 +142,13 @@ nav {
     font-size: calc(.25rem + 3vw);
     margin: 0 5% 3% 5%;
 }
+.home-section-3-box {
+    margin: 0 15% 0 15%;
+    border: 2px solid #64B6AC;
+}
 .home-section-3-rows {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0 15% 0 15%;
-    border: 2px solid #64B6AC;
     align-items: center;
     background-color: #64B6AC;
 }
@@ -186,7 +190,7 @@ nav {
 }
 .home-section-4-review {
     background-color: #104F55;
-    border-radius: 30px;
+    border-radius: 15px;
     margin: 5%;
 }
 .home-section-4-review p {
@@ -220,8 +224,6 @@ nav {
     margin: 10px;
     width: 80%;
     align-items: center;
-    min-height: 200px;
-    min-width: 500px;
     background-color: teal;
     font-family: Arial, Helvetica, sans-serif;
 }
