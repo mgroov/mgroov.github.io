@@ -400,6 +400,7 @@ option:target {
 }
 
 /* Add more styling as needed */
+/*Credit for hamburger menu creation: https://www.scaler.com/topics/hamburger-menu/*/
 /*Container for menu button  */
 .menu-button-container {
     display: none;
