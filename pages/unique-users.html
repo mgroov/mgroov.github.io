@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../app.css">
+    <title>Blog</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="heading">
+            <h4>Rocks</h4>
+        </div>
+        <!--  checkbox to control the icon's state    -->
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a class="active" href="unique-users.html">Users</a></li>
+        </ul>
+    </nav>
+
+    <!-- Use our hosted Lambda function to grab unique users (Hardcoded string for now) -->
+    <div>Unique Users Test</div>
+    <div id="unique"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda",
+            dataType: "json",
+            success:function(unique){
+                populate(unique);
+            }
+        });
+        function populate(unique) {
+            document.getElementById('unique').innerHTML = unique;
+        }
+    </script>
+</body>
+</html>
