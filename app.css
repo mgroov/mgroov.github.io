@@ -498,21 +498,23 @@ option:target {
       color: black;
   }
 
-  /* unique users =========================================== */
-  .card-grid {
+/* unique users =========================================== */
+.card-grid {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    margin: 20px;
 }
-  .card {
+.card {
     background-color: #F3EBD5;
     box-shadow: 2px 2px 5px 2px gray;
     align-items: center;
     justify-content: center;
-  }
-  .card-text {
+}
+.card-text {
+    margin: 20px;
     font-size: calc(.5rem + 5vw);
-    font-weight: 100;
     font-family: Verdana;
-  }
+}
