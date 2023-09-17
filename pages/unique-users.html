@@ -31,8 +31,14 @@
     </nav>
 
     <!-- Use our hosted Lambda function to grab unique users (Hardcoded string for now) -->
-    <div>Unique Users Test</div>
-    <div id="unique"></div>
+    <!-- Followed tutorial at https://www.youtube.com/watch?v=UeVIRnWW76c -->
+    <div class="card-grid">
+        <div class="body-text"><h1>Unique Website Visitors</h1></div>
+        <div class="card">
+            <div class="card-text" id="unique"></div>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $.ajax({
