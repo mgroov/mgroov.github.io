@@ -78,8 +78,18 @@
                     <label for ="card"> ZIP Code</label>
                     <input type="text" class="zip-code-field" placeholder="Enter your ZIP Code" />
                 </div>
-                <button type="submit" class="submit-now-btn">
-                    submit
+                <script>
+                    function successfulPayment(){
+
+                        var delay = 5000;
+                        setTimeout(function () {
+                                    window.location.href = "../Index.html";
+                                    }, delay); 
+                        alert("Payment was successful. You will be redirected to Home Page after 5 seconds");
+                    }
+                </script>
+                <button type="submit" class="submit-now-btn" onclick="successfulPayment()">
+                    Submit
                 </button>
             </div>
         </div>
