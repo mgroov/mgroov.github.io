@@ -518,38 +518,3 @@ option:target {
     font-size: calc(.5rem + 5vw);
     font-family: Verdana;
 }
-
-
-.info {
-    font-family: courier;
-    font-size: 18px;
-    color: #999;
-    float: left;
-    padding-right: 10px;
-  }
-  
-  .info-big {
-    font-family: courier;
-    font-size: 32px;
-    font-weight: bold;
-    color: #999;
-    float: left;
-    padding-right: 10px;
-  }
-  
-  .fp { 
-    font-family: courier;
-    font-size: 18px;
-    color: #069;
-    float: left;
-  }
-  
-  #fingerprint { 
-    font-family: courier;
-    font-size: 32px;
-    font-weight: bold;
-    color: #069;
-    float: left;
-  }
-  
-  br { clear: both; }
