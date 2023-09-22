@@ -8,7 +8,7 @@
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/441933c32d.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="displayCounter()">
     <!-- Navigation Bar -->
     <nav>
         <div class="heading">
@@ -148,10 +148,9 @@
             // display the counter on screen
             alert('Hey, you visited this page ' + localStorage['counter'] + ' times.');
         }
-    }
-    // call the 'displayCounter()' function when the web page is loaded
-    window.onload = function () {
-        displayCounter();
+        else{
+            alert('Not working');
+        }
     }
 </script>
 </html>
