@@ -20,49 +20,49 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
   }
 })("Fingerprint", this, function () {
   "use strict";
-  var Fingerprint = function (options) {
-    var nativeForEach, nativeMap;
-    nativeForEach = Array.prototype.forEach;
-    nativeMap = Array.prototype.map;
-    this.each = function (obj, iterator, context) {
-      if (obj === null) {
-        return;
-      }
-      if (nativeForEach && obj.forEach === nativeForEach) {
-        obj.forEach(iterator, context);
-      } else if (obj.length === +obj.length) {
-        for (var i = 0, l = obj.length; i < l; i++) {
-          if (iterator.call(context, obj[i], i, obj) === {}) return;
+  class Fingerprint {
+    constructor(options) {
+      var nativeForEach, nativeMap;
+      nativeForEach = Array.prototype.forEach;
+      nativeMap = Array.prototype.map;
+      this.each = function (obj, iterator, context) {
+        if (obj === null) {
+          return;
         }
-      } else {
-        for (var key in obj) {
-          if (obj.hasOwnProperty(key)) {
-            if (iterator.call(context, obj[key], key, obj) === {}) return;
+        if (nativeForEach && obj.forEach === nativeForEach) {
+          obj.forEach(iterator, context);
+        } else if (obj.length === +obj.length) {
+          for (var i = 0, l = obj.length; i < l; i++) {
+            if (iterator.call(context, obj[i], i, obj) === {}) return;
+          }
+        } else {
+          for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+              if (iterator.call(context, obj[key], key, obj) === {}) return;
+            }
           }
         }
+      };
+      this.map = function (obj, iterator, context) {
+        var results = [];
+        if (obj == null) return results;
+        if (nativeMap && obj.map === nativeMap) return obj.map(iterator, context);
+        this.each(obj, function (value, index, list) {
+          results[results.length] = iterator.call(context, value, index, list);
+        });
+        return results;
+      };
+      if (typeof options == "object") {
+        this.hasher = options.hasher;
+        this.screen_resolution = options.screen_resolution;
+        this.screen_orientation = options.screen_orientation;
+        this.canvas = options.canvas;
+        this.ie_activex = options.ie_activex;
+      } else if (typeof options == "function") {
+        this.hasher = options;
       }
-    };
-    this.map = function (obj, iterator, context) {
-      var results = [];
-      if (obj == null) return results;
-      if (nativeMap && obj.map === nativeMap) return obj.map(iterator, context);
-      this.each(obj, function (value, index, list) {
-        results[results.length] = iterator.call(context, value, index, list);
-      });
-      return results;
-    };
-    if (typeof options == "object") {
-      this.hasher = options.hasher;
-      this.screen_resolution = options.screen_resolution;
-      this.screen_orientation = options.screen_orientation;
-      this.canvas = options.canvas;
-      this.ie_activex = options.ie_activex;
-    } else if (typeof options == "function") {
-      this.hasher = options;
     }
-  };
-  Fingerprint.prototype = {
-    get: function () {
+    get() {
       var keys = [];
       keys.push(navigator.userAgent);
       keys.push(navigator.language);
@@ -95,8 +95,8 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
       } else {
         return this.murmurhash3_32_gc(keys.join("###"), 31);
       }
-    },
-    murmurhash3_32_gc: function (key, seed) {
+    }
+    murmurhash3_32_gc(key, seed) {
       var remainder, bytes, h1, h1b, c1, c2, k1, i;
       remainder = key.length & 3;
       bytes = key.length - remainder;
@@ -156,44 +156,42 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
         0xffffffff;
       h1 ^= h1 >>> 16;
       return h1 >>> 0;
-    },
-    hasLocalStorage: function () {
+    }
+    hasLocalStorage() {
       try {
         return !!window.localStorage;
       } catch (e) {
         return true;
       }
-    },
-    hasSessionStorage: function () {
+    }
+    hasSessionStorage() {
       try {
         return !!window.sessionStorage;
       } catch (e) {
         return true;
       }
-    },
-    isCanvasSupported: function () {
+    }
+    isCanvasSupported() {
       var elem = document.createElement("canvas");
       return !!(elem.getContext && elem.getContext("2d"));
-    },
-    isIE: function () {
+    }
+    isIE() {
       if (navigator.appName === "Microsoft Internet Explorer") {
         return true;
-      } else if (
-        navigator.appName === "Netscape" &&
-        /Trident/.test(navigator.userAgent)
-      ) {
+      } else if (navigator.appName === "Netscape" &&
+        /Trident/.test(navigator.userAgent)) {
         return true;
       }
       return false;
-    },
-    getPluginsString: function () {
+    }
+    getPluginsString() {
       if (this.isIE() && this.ie_activex) {
         return this.getIEPluginsString();
       } else {
         return this.getRegularPluginsString();
       }
-    },
-    getRegularPluginsString: function () {
+    }
+    getRegularPluginsString() {
       return this.map(
         navigator.plugins,
         function (p) {
@@ -204,8 +202,8 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
         },
         this
       ).join(";");
-    },
-    getIEPluginsString: function () {
+    }
+    getIEPluginsString() {
       if (window.ActiveXObject) {
         var names = [
           "ShockwaveFlash.ShockwaveFlash",
@@ -233,8 +231,8 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
       } else {
         return "";
       }
-    },
-    getScreenResolution: function () {
+    }
+    getScreenResolution() {
       var resolution;
       if (this.screen_orientation) {
         resolution =
@@ -245,12 +243,11 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
         resolution = [screen.height, screen.width];
       }
       return resolution;
-    },
-    getCanvasFingerprint: function () {
+    }
+    getCanvasFingerprint() {
       var canvas = document.createElement("canvas");
       var ctx = canvas.getContext("2d");
-      var txt =
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-={}|[]:"<>?;,.';
+      var txt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-={}|[]:"<>?;,.';
       ctx.textBaseline = "top";
       ctx.font = "14px 'Arial'";
       ctx.textBaseline = "alphabetic";
@@ -262,7 +259,7 @@ Special thanks to Valentin Vasilyev for the original fingerprintjs slightly modi
       ctx.fillText(txt, 4, 17);
       return canvas.toDataURL();
     }
-  };
+  }
   return Fingerprint;
 });
 /**************************************************/
@@ -1541,14 +1538,16 @@ function hashtable_size() {
   return iOut;
 }
 
-function Hashtable() {
-  "use strict";
-  this.containsKey = hashtable_containsKey;
-  this.get = hashtable_get;
-  this.keys = hashtable_keys;
-  this.put = hashtable_put;
-  this.size = hashtable_size;
-  this.hashtable = [];
+class Hashtable {
+  constructor() {
+    "use strict";
+    this.containsKey = hashtable_containsKey;
+    this.get = hashtable_get;
+    this.keys = hashtable_keys;
+    this.put = hashtable_put;
+    this.size = hashtable_size;
+    this.hashtable = [];
+  }
 }
 
 /* Detect Plugins */
