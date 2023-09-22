@@ -11,17 +11,14 @@
 <body onload="displayCounter()">
     <script>
         function displayCounter() {
-            // check if the localStorage object is supported by the browser
-            if ('localStorage' in window && window['localStorage'] !== null) {
-                // if the counter has been defined, increment its value, // otherwise, set it to 0
-                ('counter' in localStorage && localStorage['counter'] !== null) ? localStorage['counter']++ : localStorage['counter'] = 0;
-                var container = document.getElementById('container');
-                if (!container) { return };
-                // display the counter on screen
-                alert('Hey, you visited this page. Congrats!');
+            var check = localStorage.getItem('visited');
+            if(check == null){
+                localStorage.visited = 1;
+                alert("Welcome for the first time!")
             }
             else{
-                alert('Not working');
+                localStorage.visited += 1;
+                alert("Welcome back!")
             }
         }
     </script>
