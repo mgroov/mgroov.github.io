@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Users</title>
     <link rel="stylesheet" href="../../app.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <!-- ... your existing navigation HTML ... -->
+        <div class="heading">
+            <h4>Rocks</h4>
+        </div>
+        <!--  checkbox to control the icon's state    -->
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a class="active" href="unique-users.html">Users</a></li>
+        </ul>
     </nav>
 
-    <!-- Unique Users Card Grid -->
+    <!-- Use our hosted Lambda function to grab unique users (Hardcoded string for now) -->
+    <!-- Followed tutorial at https://www.youtube.com/watch?v=UeVIRnWW76c -->
     <div class="card-grid">
-        <!-- ... your existing content HTML ... -->
+        <div class="body-text"><h1>Unique Website Visitors</h1></div>
+        <div class="card">
+            <div class="card-text" id="unique"></div>
+        </div>
     </div>
 
     <!-- Importing jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    
     <!-- AJAX call to get the unique users count and display it -->
     <script>
         $.ajax({
             url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda",
             dataType: "json",
-            success: function(unique) {
+            success:function(unique){
                 populate(unique);
             }
         });
-
         function populate(unique) {
             document.getElementById('unique').innerHTML = unique;
         }
     </script>
 
-<<<<<<< Updated upstream
-
-=======
     <!-- Script to record unique visitors -->
     <script>
         // Check if the current visitor is recorded in the local storage.
         if (!localStorage.getItem('recordedVisit')) {
             const visitorID = navigator.userAgent + Math.random(); // Simple method for generating a unique visitor ID. 
-
+    
             // Send this visitor ID to your Lambda function to record it
             $.ajax({
                 url: "PUT ENDPOINT HERE", // Replace with your Lambda endpoint.
@@ -60,6 +77,5 @@
             });
         }
     </script>
->>>>>>> Stashed changes
 </body>
 </html>
