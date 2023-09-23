@@ -61,20 +61,29 @@
         if (!localStorage.getItem('recordedVisit')) {
             const visitorID = navigator.userAgent + Math.random(); // Simple method for generating a unique visitor ID. 
     
-            // Send this visitor ID to your Lambda function to record it
+
             $.ajax({
-                url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
+                url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda",
                 method: "POST",
-                data: JSON.stringify({ visitorID: visitorID }),
-                contentType: "application/json",
-                success: function(response) {
-                    // If successfully recorded, mark this visitor as recorded in local storage.
+                dataType: "json",
+                success:function(response){
                     localStorage.setItem('recordedVisit', 'true');
-                },
-                error: function(err) {
-                    console.error("Failed to record the visitor:", err);
                 }
             });
+            // Send this visitor ID to your Lambda function to record it
+            // $.ajax({
+            //     url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
+            //     method: "POST",
+            //     data: JSON.stringify({ visitorID: visitorID }),
+            //     contentType: "application/json",
+            //     success: function(response) {
+            //         // If successfully recorded, mark this visitor as recorded in local storage.
+            //         localStorage.setItem('recordedVisit', 'true');
+            //     },
+            //     error: function(err) {
+            //         console.error("Failed to record the visitor:", err);
+            //     }
+            // });
         }
     </script>
 </body>
