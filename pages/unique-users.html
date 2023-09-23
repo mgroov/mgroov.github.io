@@ -58,7 +58,7 @@
     <!-- Script to record unique visitors -->
     <script>
         // Check if the current visitor is recorded in the local storage.
-        if (!localStorage.getItem('recordedVisit')) {
+        if (localStorage.getItem('recordedVisit') != 'true') {
             const visitorID = navigator.userAgent + Math.random(); // Simple method for generating a unique visitor ID. 
     
 
@@ -68,6 +68,9 @@
                 dataType: "json",
                 success:function(response){
                     localStorage.setItem('recordedVisit', 'true');
+                },
+                error: function(err) {
+                    console.error("Failed to record the visitor:", err);
                 }
             });
             // Send this visitor ID to your Lambda function to record it
