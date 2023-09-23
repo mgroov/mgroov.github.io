@@ -68,11 +68,14 @@
                 dataType: "json",
                 success:function(response){
                     localStorage.setItem('recordedVisit', 'true');
+                    console.log("")
                 },
                 error: function(err) {
                     console.error("Failed to record the visitor:", err);
                 }
             });
+
+            localStorage.setItem('recordedVisit', 'true');
             // Send this visitor ID to your Lambda function to record it
             // $.ajax({
             //     url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
