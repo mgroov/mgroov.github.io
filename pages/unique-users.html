@@ -63,7 +63,7 @@
     
             // Send this visitor ID to your Lambda function to record it
             $.ajax({
-                url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default", // Replace with your Lambda endpoint.
+                url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
                 method: "POST",
                 data: JSON.stringify({ visitorID: visitorID }),
                 contentType: "application/json",
