@@ -58,7 +58,7 @@
     <!-- Script to record unique visitors -->
     <script>
         // Check if the current visitor is recorded in the local storage.
-        if (localStorage.getItem('recordedVisit') != 'true') {
+        if (localStorage.getItem('recordedVisit') != 1) {
             const visitorID = navigator.userAgent + Math.random(); // Simple method for generating a unique visitor ID. 
     
 
@@ -67,7 +67,7 @@
                 method: "POST",
                 dataType: "json",
                 success:function(response){
-                    localStorage.setItem('recordedVisit', 'true');
+                    localStorage.setItem('recordedVisit', 1);
                     console.log("")
                 },
                 error: function(err) {
@@ -75,7 +75,7 @@
                 }
             });
 
-            localStorage.setItem('recordedVisit', 'true');
+            localStorage.setItem('recordedVisit', 1);
             // Send this visitor ID to your Lambda function to record it
             // $.ajax({
             //     url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
