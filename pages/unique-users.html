@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../app.css">
     <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <title>Users</title>
+    <link rel="stylesheet" href="../app.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -27,13 +28,9 @@
         </label>
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
             <li><a href="pricing.html">Services</a></li>
             <li><a href="payment.html">Payment</a></li>
-            <li><a class="active" href="unique-users.html">Users</a></li>
         </ul>
     </nav>
 
@@ -84,21 +81,17 @@
             });
 
             localStorage.setItem('recordedVisit', 1);
-            // Send this visitor ID to your Lambda function to record it
-            // $.ajax({
-            //     url: "https://aq1kk2fsu8.execute-api.us-east-2.amazonaws.com/default/test-lambda", // Replace with your Lambda endpoint.
-            //     method: "POST",
-            //     data: JSON.stringify({ visitorID: visitorID }),
-            //     contentType: "application/json",
-            //     success: function(response) {
-            //         // If successfully recorded, mark this visitor as recorded in local storage.
-            //         localStorage.setItem('recordedVisit', 'true');
-            //     },
-            //     error: function(err) {
-            //         console.error("Failed to record the visitor:", err);
-            //     }
-            // });
         }
     </script>
+
+    <div class="footer-section">
+        <div class="footer-heading-4">Useful Links</div>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="unique-users.html">Unique Users</a></li>
+        </ul>
+    </div>
 </body>
 </html>

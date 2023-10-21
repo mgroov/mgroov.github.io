@@ -26,13 +26,9 @@
         </label>
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
             <li><a href="pricing.html">Services</a></li>
             <li><a class="active" href="payment.html">Payment</a></li>
-            <li><a href="unique-users.html">Users</a></li>
         </ul>
     </nav>
     <!---<div class="body-text"><h1>Payment Page</h1></div> -->
@@ -85,12 +81,7 @@
                 </div>
                 <script>
                     function successfulPayment(){
-
-                        var delay = 5000;
-                        setTimeout(function () {
-                                    window.location.href = "../index.html";
-                                    }, delay); 
-                        alert("Payment was successful. You will be redirected to Home Page after 5 seconds");
+                        window.location.href = "survey.html";
                     }
                 </script>
                 <button type="submit" class="submit-now-btn" onclick="successfulPayment()">
@@ -98,6 +89,17 @@
                 </button>
             </div>
         </div>
-</body>
+    </div>
+    <!---Footer Definition -->
+    <div class="footer-section">
+        <div class="footer-heading-4">Useful Links</div>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="unique-users.html">Unique Users</a></li>
+        </ul>
+    </div>   
 
+</body>
 </html>
