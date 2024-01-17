@@ -1,0 +1,151 @@
+
+/* light mode styles */
+body{
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+p{
+    color: black;
+    background-color: rgb(245, 244, 244);
+    text-align: justify;
+    margin: 3px;
+}
+
+/* image styling and embedding */
+/*https://www.geeksforgeeks.org/how-to-wrap-the-text-around-an-image-using-html-and-css/*/
+img{
+  float: left;
+  margin: 5px;
+}
+
+/*dark mode changes */
+.dark{
+    background-color: #111;
+    color: white;
+}
+
+
+/*art done by Matthew Groover*/
+button {
+   width: 80px;
+   height: 16px;
+   padding: 0px;
+   margin: 0px;
+   background-image: url("./images/lightdark.png");
+  
+}
+/*header styling*/
+/*inspired by:
+https://www.w3schools.com/csS/css_navbar_horizontal.asp
+*/
+header{
+    padding: 0px;
+    top:0px;
+    margin: 0px;
+    width: 100%;
+    display: block;
+    background-color:maroon;
+    color: whitesmoke;
+}
+
+h1{
+    padding: 0;
+    margin-top: 0;
+}
+
+/*footer styling*/
+/*code inspired from: https://www.w3schools.com/TAgs/tag_footer.asp */
+footer {
+  padding: 3px;
+  text-align: center;
+  bottom:0px;
+  position: fixed;
+  background-color: maroon;
+  color: white;
+  width: 100%;
+}
+
+/*article */
+article{
+  background-color:#e7e7e700;
+  margin: 10px;
+}
+/*nav menu list */
+/*inspired by:
+https://www.w3schools.com/csS/css_navbar_horizontal.asp
+*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 3px;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+ li{
+    float: left;
+ }
+
+ li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+
+/*changes for screen size */
+
+
+
+/*copied from tutorial link flips screen vertical for 
+phones and smaller screens
+https://www.w3schools.com/cssref/css3_pr_mediaquery.php */
+
+ @media screen and (max-width: 600px) {
+   /* when screen is too small hide footer to prevent content being blocked */
+    footer{
+      opacity: 0;
+    }
+
+    header{
+      font-size: 12px;
+    }
+    
+    /* shrink navbar padding and change font size*/
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0px;
+      overflow: hidden;
+      background-color: rgb(40, 38, 38);
+    }
+  
+   li{
+      float: left;
+   }
+  
+   li a {
+      display: block;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      padding: 5px 6px;
+      text-decoration: none;
+    }
+  
+    li a:hover {
+      background-color: #111;
+    }
+
+    /*change font size to better fit screen for readability*/
+    p{
+      font-weight: normal;
+      font-size: 16px;
+    }
+  } 
