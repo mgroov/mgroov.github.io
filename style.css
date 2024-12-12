@@ -53,6 +53,9 @@ ul {
     border-radius: 16px;
   }
 
+  .button :hover{
+    background-color: #98C9A3;
+  }
 
   * {
     box-sizing: border-box;
